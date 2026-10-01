@@ -39,6 +39,21 @@ DSH 里 `guaihub` provider 走的是 `api: anthropic-messages`（聊天协议）
     outputDir: images/gen
 ```
 
+## 备选：命令行脚本 `cli/gen.mjs`
+
+不想开 DSH 会话、或者要跑插件的图生图 / 视频功能，可以直接用仓库里的 `cli/gen.mjs`（只依赖 Node，无第三方包）：
+
+```powershell
+$cli = "~/dsh/dsh-imagegen/cli/gen.mjs"   # 换成你本地的 clone 路径
+
+node $cli -p "一只赛博朋克猫，霓虹雨夜" -o images/cat.png   # 文生图
+node $cli --list                                          # 列模型
+node $cli --edit in.png -p "把背景换成海边"                 # 图生图
+node $cli --video -m video-ds-2.0 -p "..." -o out.mp4      # 视频
+```
+
+参数与端点细节见 [`cli/README.md`](cli/README.md)。
+
 ## 安装（desktop profile —— 当前 DSH 实际在跑的 profile）
 
 插件源码放在 `~/dsh/dsh-imagegen`，已用 DSH 自带的插件管理器装进 desktop profile：
