@@ -85,7 +85,7 @@ plugin_manager(action="install_bundle", target="file:<你本地的 clone 路径>
 - 公开仓库：<https://github.com/dong2007-png/dsh-imagegen>。
 - 更新流程：改 `lib/index.js` → 重新 `plugin_manager install_bundle`（或把文件复制到 `~/.dsh/profiles/desktop/node_modules/dsh-imagegen/lib/`）→ `git commit` → 推送。
 - 网络提示：`github.com` 的 releases/raw 在某些网络下直连不通，可改用第三方镜像（`api.github.com` 通常直连正常）。
-- 推送（用带 token 的 URL，免去交互式凭据助手）：
+- 推送：先用 `gh auth login` 登录（或自备 PAT），再带 token 推：
 
 ```powershell
 $tok = (gh auth token).Trim()
