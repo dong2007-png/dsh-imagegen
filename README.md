@@ -64,3 +64,15 @@ plugin_manager(action="install_bundle", target="file:<你本地的 clone 路径>
 
 - 写盘用的是宿主进程里的 `node:fs`，不经过 DSH 的 fs 沙箱与文件版本观测。
 - 密钥不要提交到仓库；本插件只按名字去 credentials 里取。
+
+## 仓库 / 后续更新
+
+- 公开仓库：<https://github.com/dong2007-png/dsh-imagegen>。
+- 更新流程：改 `lib/index.js` → 重新 `plugin_manager install_bundle`（或把文件复制到 `~/.dsh/profiles/desktop/node_modules/dsh-imagegen/lib/`）→ `git commit` → 推送。
+- 网络提示：`github.com` 的 releases/raw 在某些网络下直连不通，可改用第三方镜像（`api.github.com` 通常直连正常）。
+- 推送（用带 token 的 URL，免去交互式凭据助手）：
+
+```powershell
+$tok = (gh auth token).Trim()
+git push "https://x-access-token:$tok@github.com/dong2007-png/dsh-imagegen.git" main:main
+```
