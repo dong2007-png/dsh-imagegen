@@ -91,3 +91,15 @@ plugin_manager(action="install_bundle", target="file:<你本地的 clone 路径>
 $tok = (gh auth token).Trim()
 git push "https://x-access-token:$tok@github.com/dong2007-png/dsh-imagegen.git" main:main
 ```
+
+## 许可证
+
+本项目基于 [MIT 许可证](LICENSE) 发布，完整条文见仓库根目录的 [`LICENSE`](LICENSE) 文件。
+
+```text
+MIT License
+
+Copyright (c) 2026 dong2007-png
+```
+
+可自由使用、修改、分发（含商用），需保留版权与许可声明；软件按「原样」提供，不附带任何担保。
