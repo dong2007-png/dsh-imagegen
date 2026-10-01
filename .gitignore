@@ -1,0 +1,11 @@
+﻿node_modules/
+*.log
+.DS_Store
+
+# 密钥与本地产物（防误提交）
+.env
+.env.*
+.credentials*
+*.pem
+*.key
+images/
